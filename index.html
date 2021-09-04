@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Calculo de JC</title>
+    <style>
+        body{
+            padding: 0;
+            box-sizing: border-box;
+            margin: 0%;
+            background-image: url(_img/bg-cubos.jpg);    
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button{
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .formatação{
+            background-color: #90ee90;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .alinha{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main class="container mt-3 mb-3">
+        <div class="row justify-content-center">
+          <div class="col-4 bg-light formatação">
+            <form class="form-dados" method="POST">
+              <h1 class="text-success text-center">Simulador</h1>
+              <h2 class="text-success text-center mb-3">Juros Composto</h2>
+              <div class="row">
+                <div class="mb-3 col-12">
+                  <label for="nome" class="form-label lead">Nome:</label>
+                  <input type="text" class="form-control" name="nome" id="nome" aria-describedby="Nome">
+                </div>
+                <div class="mb-3 col-12">
+                    <label for="mensalidade" class="form-label lead">Investimento:</label>
+                    <input type="number" class="form-control" name="nome" placeholder="R$" id="mensalidade" aria-describedby="mensalidade">
+                  </div>
+                <div class="mb-3 col-12">
+                 <label for ="tempo" class="form-label lead">Tempo:</label>
+                 <select class="form-select" aria-label="Default select example">
+                    <option selected></option>
+                    <option value="1">6 Meses</option>
+                    <option value="2">1 Ano</option>
+                    <option value="3">3 anos</option>
+                    <option value="4">5 anos</option>
+                    <option value="5">10 anos</option>
+                  </select>
+                </div>
+
+                <div class="alinha">
+                  <button type="submit" class="btn btn-success" id="btn1" onclick="calcular_juros(); return false;">Simular</button>
+                </div>
+              </div>
+            </form>
+            <!--Form respostas-->
+            <div class="text-center show-result d-none">
+                <h1 class="text-success text-center mb-3">Simulação</h1>
+                <h2 class="result-name lead">...</h2>
+                <hr />
+                <h2 class="result-investimento">...</h2>
+                <div class="row">
+                  <div class="col-6 formatin">
+                    <p class="lead">Projeção:</p>
+                    <p class="lead">6 meses</p>
+                    <p class="lead">1 ano</p>
+                    <p class="lead">3 anos</p>
+                    <p class="lead">5 anos</p>
+                    <p class="lead">10 anos</p>
+                  </div>
+                  <div class="col-6">
+                    <p class="lead">Notas:</p>
+                    <p class="result-s1">...</p>
+                    <p class="result-s2">...</p>
+                    <p class="result-s3">...</p>
+                    <p class="result-s4">...</p>
+                    <p class="result-s5">...</p>
+                  </div>
+                </div>
+                <p>&nbsp;</p>
+                <button type="submit" class="btn btn-success" onclick="voltar(); return false;">Calcular Novamente</button>
+              </div>
+            </div>
+        </div>
+    </main>
+    
+    
+    <script type="text/javascript" src="_js/calcular_juros.js"></script>
+</body>
+</html>
